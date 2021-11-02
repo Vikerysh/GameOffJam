@@ -6,15 +6,20 @@ public class FollowPlayer : MonoBehaviour
 {
     GameObject target;
     // Start is called before the first frame update
-    void Start()
+    public Vector3 target_Offset;
+    private Vector3 velocity = Vector3.zero;
+    private void Start()
     {
+        //get player instance
         target = GameController.instance.player;
-    }
 
-    // Update is called once per frame
+        target_Offset = transform.position - target.transform.position;
+    }
     void Update()
     {
-        //Have Camera Follow Player
-        transform.position = new Vector3(target.transform.position.x, target.transform.position.y, transform.position.z);
+        if (target)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, target.transform.position + target_Offset, ref velocity, 0.2f);
+        }
     }
 }
