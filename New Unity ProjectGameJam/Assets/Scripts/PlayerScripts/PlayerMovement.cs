@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
 
     public SpriteRenderer charSprite;
+    public SpriteRenderer gunSprite;
     public Animator charAnim;
 
     bool isFacingRight;
@@ -20,7 +21,13 @@ public class PlayerMovement : MonoBehaviour
     //CoyoteTime
     private float coyoteTime = 0.2f;
     private float coyoteTimeCounter;
+    private Camera cam;
 
+    public GameObject hand;
+
+    private Vector2 playerScreenPoint;
+    private Vector2 mousePosition;
+    private WeaponController weaponController;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +37,8 @@ public class PlayerMovement : MonoBehaviour
         if(!charSprite.flipX){
             isFacingRight = true;
         }
+        cam = GameController.instance.cam;
+        weaponController = GetComponent<WeaponController>();
     }
 
     // Update is called once per frame
@@ -66,15 +75,23 @@ public class PlayerMovement : MonoBehaviour
             charAnim.SetBool("isMoving", false);
         }
 
+        GunFaceMouse();
+
+        playerScreenPoint = cam.WorldToScreenPoint(transform.position);
+
         //CHARACTER FLIPPING FOR TUNRING AROUND
-        if(move.x < 0){
+        if(Input.mousePosition.x - playerScreenPoint.x < 0){
             if(isFacingRight){
                 Flip();
             }
-        } else if(move.x > 0){
+        } else if(Input.mousePosition.x - playerScreenPoint.x > 0){
             if(!isFacingRight){
                 Flip();
             }
+        }
+        
+        if(Input.GetButton("Fire1")){
+            weaponController.Fire();
         }
 
     }
@@ -95,10 +112,22 @@ public class PlayerMovement : MonoBehaviour
     private void Flip(){
         isFacingRight = !isFacingRight;
         charSprite.flipX = !charSprite.flipX;
+        gunSprite.flipY = !gunSprite.flipY;
     }
     private void Jump(){
         Debug.Log("Jump");
         rb.AddForce(transform.up * jump);
     }
 
+    private void GunFaceMouse(){
+        mousePosition = Input.mousePosition;
+        mousePosition = cam.ScreenToWorldPoint(mousePosition);
+
+        Vector2 direction = new Vector2(
+            mousePosition.x - transform.position.x, 
+            mousePosition.y - transform.position.y
+        );
+
+        hand.transform.right = direction;
+    }
 }

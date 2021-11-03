@@ -13,4 +13,5 @@ public class GameController : MonoBehaviour
     }
     #endregion
     public GameObject player;
+    public Camera cam;
 }
