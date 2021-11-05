@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public float lifetime;
     public float speed;
-    public float damage;
+    public int damage;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -27,7 +27,10 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other){
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.tag == "Enemy"){
+            other.GetComponent<Enemy>().TakeDamage(damage);
+        }
         Destroy(gameObject);
     }
 }
