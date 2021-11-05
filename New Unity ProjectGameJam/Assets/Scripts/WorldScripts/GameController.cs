@@ -14,4 +14,21 @@ public class GameController : MonoBehaviour
     #endregion
     public GameObject player;
     public Camera cam;
+
+    public bool isPaused;
+    public bool pauseMenuActive;
+
+
+    public void PauseGame()
+    {
+        isPaused = true;
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        Time.timeScale = 1;
+    }
+    
 }
