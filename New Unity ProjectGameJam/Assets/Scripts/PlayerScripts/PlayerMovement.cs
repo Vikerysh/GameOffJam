@@ -51,47 +51,50 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IsGrounded()){
-            coyoteTimeCounter = coyoteTime;
-        } else {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
-        move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-
-        if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump")){
-            Jump();
-
-        }
-
-        if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            coyoteTimeCounter = 0f;
-        }
-        
-        //CHARACTER MOVE DETECTION FOR ANIMATION
-        if(move.x != 0){
-            charAnim.SetBool("isMoving", true);
-        } else {
-            charAnim.SetBool("isMoving", false);
-        }
-
-        GunFaceMouse();
-
-        playerScreenPoint = cam.WorldToScreenPoint(transform.position);
-
-        //CHARACTER FLIPPING FOR TUNRING AROUND
-        if(Input.mousePosition.x - playerScreenPoint.x < 0){
-            if(isFacingRight){
-                Flip();
+        if(!GameController.instance.isPaused){
+            
+            if(IsGrounded()){
+                coyoteTimeCounter = coyoteTime;
+            } else {
+                coyoteTimeCounter -= Time.deltaTime;
             }
-        } else if(Input.mousePosition.x - playerScreenPoint.x > 0){
-            if(!isFacingRight){
-                Flip();
+            move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
+            if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump")){
+                Jump();
+
             }
-        }
-        
-        if(Input.GetButton("Fire1")){
-            weaponController.Fire();
+
+            if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                coyoteTimeCounter = 0f;
+            }
+            
+            //CHARACTER MOVE DETECTION FOR ANIMATION
+            if(move.x != 0){
+                charAnim.SetBool("isMoving", true);
+            } else {
+                charAnim.SetBool("isMoving", false);
+            }
+
+            GunFaceMouse();
+
+            playerScreenPoint = cam.WorldToScreenPoint(transform.position);
+
+            //CHARACTER FLIPPING FOR TUNRING AROUND
+            if(Input.mousePosition.x - playerScreenPoint.x < 0){
+                if(isFacingRight){
+                    Flip();
+                }
+            } else if(Input.mousePosition.x - playerScreenPoint.x > 0){
+                if(!isFacingRight){
+                    Flip();
+                }
+            }
+            
+            if(Input.GetButton("Fire1")){
+                weaponController.Fire();
+            }    
         }
 
     }

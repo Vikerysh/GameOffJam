@@ -18,8 +18,10 @@ public class WeaponController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(fireRateCounter > 0){
-            fireRateCounter -= Time.deltaTime;
+        if(!GameController.instance.isPaused){
+            if(fireRateCounter > 0){
+                fireRateCounter -= Time.deltaTime;
+            }
         }
     }
 
