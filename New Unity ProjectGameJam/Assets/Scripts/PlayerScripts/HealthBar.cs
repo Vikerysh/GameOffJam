@@ -24,7 +24,7 @@ public class HealthBar : MonoBehaviour
 
     void Update()
     {
-        float fillValue = healthSystem.health / healthSystem.maxHealth;
+        float fillValue = (float)healthSystem.health / (float)healthSystem.maxHealth;
         Slider.value = fillValue;
     }
 

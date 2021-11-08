@@ -6,32 +6,42 @@ using TMPro;
 
 public class HealthSystem : MonoBehaviour
 {
-    public float health;
-    public float maxHealth;
+    public int health;
+    public int maxHealth;
+    [SerializeField]
+    private float invincibilityDurationSeconds;
 
-        public HealthSystem(float health)
+    bool isInvincible = false;
+
+        public HealthSystem(int health)
     {
         this.health = health;
         health = maxHealth;        
     }
 
-    public float GetHealth()
+    public int GetHealth()
     {
         return health; 
     }
     
    
-    public void Damage( float damageAmount)
+    public void Damage( int damageAmount)
     {
-        health -= damageAmount; 
+        //Stop function if we're invincible
+        if(isInvincible) return;
 
+        health -= damageAmount; 
+        
         if(health<=0)
         {
             //trigger Death animation/ Game over screen/ reload game
+        } else {
+            //Set Invincibility Frames
+            StartCoroutine(InvicibilityFrames());
         }
     }
 
-    public void Heal(float healthAmount)
+    public void Heal(int healthAmount)
     {
         health += healthAmount;
 
@@ -39,6 +49,16 @@ public class HealthSystem : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    private IEnumerator InvicibilityFrames()
+    {
+        //Player Becomes Invincible
+        isInvincible = true; 
+
+        yield return new WaitForSeconds(invincibilityDurationSeconds);
+        //Player loses Invincibility
+        isInvincible = false;
     }
 
 }

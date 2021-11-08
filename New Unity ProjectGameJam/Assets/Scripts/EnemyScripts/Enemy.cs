@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float health;
+    public int health;
+    public int damage = 1;
     public float speed;
     public float maxSpeed;
     public Rigidbody2D rb;
@@ -64,6 +65,12 @@ public class Enemy : MonoBehaviour
         }
         rb.velocity = Vector2.zero;
         anim.SetTrigger("Hit");
+    }
+
+    void OnCollisionEnter2D(Collision2D other){
+        if(other.gameObject.tag == "Player"){
+            GameController.instance.player.GetComponent<HealthSystem>().Damage(damage);
+        }
     }
 
     public virtual void EnemyBehaviour(){
