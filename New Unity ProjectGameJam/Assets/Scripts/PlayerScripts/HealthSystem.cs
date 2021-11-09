@@ -34,8 +34,10 @@ public class HealthSystem : MonoBehaviour
         
         if(health<=0)
         {
-            //trigger Death animation/ Game over screen/ reload game
-        } else {
+            KillPlayer();
+        } 
+        
+        else {
             //Set Invincibility Frames
             StartCoroutine(InvicibilityFrames());
         }
@@ -63,6 +65,14 @@ public class HealthSystem : MonoBehaviour
 
     public void KillPlayer()
     {
+        //dealwithdeath, anmimations, vfx, sfx etc
+        //trigger gameoverscreen in certain situations? or always?
+
+        ReloadScene(); //reloads the current scene in case we want to get the player back into action and avoid a gameoverscreen
+    }
+    
+    public void ReloadScene()
+    { 
         SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
         sceneLoader.ReloadScene();
     }
