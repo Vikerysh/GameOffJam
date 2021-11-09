@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class GameController : MonoBehaviour
 {
     #region Singleton
@@ -18,7 +17,6 @@ public class GameController : MonoBehaviour
     public bool isPaused;
     public bool pauseMenuActive;
 
-
     public void PauseGame()
     {
         isPaused = true;
@@ -30,5 +28,5 @@ public class GameController : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
     }
-    
+
 }

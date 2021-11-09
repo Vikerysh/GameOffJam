@@ -61,4 +61,9 @@ public class HealthSystem : MonoBehaviour
         isInvincible = false;
     }
 
+    public void KillPlayer()
+    {
+        SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
+        sceneLoader.ReloadScene();
+    }
 }
