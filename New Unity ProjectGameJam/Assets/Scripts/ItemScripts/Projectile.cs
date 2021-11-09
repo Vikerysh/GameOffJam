@@ -30,7 +30,11 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Enemy"){
-            other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            if(other.gameObject.GetComponent<Enemy>() != null){
+                other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            } else if (other.gameObject.GetComponent<FlyingEnemy>() != null){
+                other.gameObject.GetComponent<FlyingEnemy>().TakeDamage(damage);
+            }
         } else {
             Instantiate(groundImpactSplash, transform.position, Quaternion.identity);
         }
