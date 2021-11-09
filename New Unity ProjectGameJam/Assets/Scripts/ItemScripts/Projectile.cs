@@ -8,6 +8,7 @@ public class Projectile : MonoBehaviour
     public float speed;
     public int damage;
     Rigidbody2D rb;
+    public GameObject groundImpactSplash;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +28,11 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.tag == "Enemy"){
-            other.GetComponent<Enemy>().TakeDamage(damage);
+            other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+        } else {
+            Instantiate(groundImpactSplash, transform.position, Quaternion.identity);
         }
         Destroy(gameObject);
     }
