@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    GameController gameController;
 
     [SerializeField] private LayerMask groundLayerMask;
     public float speed;
@@ -29,38 +30,50 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mousePosition;
     private WeaponController weaponController;
 
+    public bool canMove;
+    public bool canShoot;
+
     // Start is called before the first frame update
     void Start()
     {
+        gameController = GameController.instance;
+        gameController.onGlitchChangeCallback += UpdateGlitches;
         rb = GetComponent<Rigidbody2D>();
         capsuleCollider2D = GetComponent<CapsuleCollider2D>();
         if(!charSprite.flipX){
             isFacingRight = true;
         }
-        cam = GameController.instance.cam;
+        cam = gameController.cam;
         weaponController = GetComponent<WeaponController>();
+        UpdateGlitches();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        // Rigidbody Movement should only be put in FixedUpdate   
-        rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
+        if(canMove){
+            // Rigidbody Movement should only be put in FixedUpdate   
+            if(move.x != 0){
+                rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
+            }
+            
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!GameController.instance.isPaused){
+        if(!gameController.isPaused){
             
             if(IsGrounded()){
                 coyoteTimeCounter = coyoteTime;
             } else {
                 coyoteTimeCounter -= Time.deltaTime;
             }
+
             move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
-            if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump")){
+            if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump") && canMove){
                 Jump();
 
             }
@@ -95,8 +108,17 @@ public class PlayerMovement : MonoBehaviour
             if(Input.GetButton("Fire1")){
                 weaponController.Fire();
             }    
+            if(Input.GetButtonDown("Fire2")){
+                weaponController.PowerShot();
+            } 
         }
 
+    }
+
+    private void UpdateGlitches(){
+        canMove = gameController.canMove;
+        canShoot = gameController.canShoot;
+        Debug.Log("eeeee");
     }
 
     private bool IsGrounded(){
@@ -132,5 +154,19 @@ public class PlayerMovement : MonoBehaviour
         );
 
         hand.transform.right = direction;
+    }
+
+    public void BlowBack(Vector2 hitPoint, float x){
+        gameController.CanMove(false);
+        StartCoroutine(MovementLock(0.5f));
+        rb.velocity = Vector2.zero;
+        Vector2 blowDir = (new Vector2(transform.position.x, transform.position.y) - hitPoint).normalized;
+        rb.AddForce(blowDir * x);
+        Debug.Log("weeee");
+    }
+
+    IEnumerator MovementLock(float x){
+        yield return new WaitForSeconds(x);
+        gameController.CanMove(true);
     }
 }

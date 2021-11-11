@@ -17,6 +17,11 @@ public class GameController : MonoBehaviour
     public bool isPaused;
     public bool pauseMenuActive;
 
+    public delegate void onGlitchChange();
+    public onGlitchChange onGlitchChangeCallback;
+
+    public bool canMove, canShoot;
+
     public void PauseGame()
     {
         isPaused = true;
@@ -29,4 +34,12 @@ public class GameController : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void CanMove(bool x){
+        canMove = x;
+        onGlitchChangeCallback.Invoke();
+    }
+    public void CanShoot(bool x){
+        canShoot = x;
+        onGlitchChangeCallback.Invoke();
+    }
 }
