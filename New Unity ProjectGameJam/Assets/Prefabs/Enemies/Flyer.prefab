@@ -196,6 +196,7 @@ MonoBehaviour:
   aggroRange: 15
   rb: {fileID: 0}
   player: {fileID: 0}
+  loot: {fileID: 852648030094143490, guid: ee61ed72a2ed1e1408a6c18029e3e48f, type: 3}
   enemySprite: {fileID: 9092124275092575555}
   heightDifference: 0
   anim: {fileID: 9092124275092575554}

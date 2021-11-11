@@ -10,8 +10,11 @@ public class Enemy : MonoBehaviour
     public float maxSpeed;
     public Rigidbody2D rb;
     public GameObject player;
-    private Vector2 playerDir;
 
+    public GameObject loot;
+    public int lootValue;
+
+    private Vector2 playerDir;
     private bool moveRight = true;
     public SpriteRenderer enemySprite;
 
@@ -77,6 +80,13 @@ public class Enemy : MonoBehaviour
 
     }
     public virtual void Die(){
+        //LootDrop();
         Destroy(gameObject);
+    }
+
+    public void LootDrop()
+    {
+        GameObject drop = Instantiate(loot, transform.position, Quaternion.identity);
+
     }
 }

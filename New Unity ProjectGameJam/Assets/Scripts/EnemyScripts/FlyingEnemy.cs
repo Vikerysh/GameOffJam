@@ -15,6 +15,9 @@ public class FlyingEnemy : MonoBehaviour
     public GameObject player;
     private Vector2 playerDir;
 
+
+    public GameObject loot;
+
     private bool moveRight = true;
     private bool aggro;
     private bool striking = false;
@@ -140,6 +143,12 @@ public class FlyingEnemy : MonoBehaviour
 
     }
     public virtual void Die(){
+        LootDrop();
         Destroy(gameObject);
+    }
+
+    public void LootDrop()
+    {
+        GameObject drop = Instantiate(loot, transform.position, Quaternion.identity);
     }
 }
