@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     private WeaponController weaponController;
 
     public bool canMove;
-    public bool canShoot;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +54,9 @@ public class PlayerMovement : MonoBehaviour
             // Rigidbody Movement should only be put in FixedUpdate   
             if(move.x != 0){
                 rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
+            }
+            if(IsGrounded() && move.x == 0){
+                rb.velocity = new Vector2(0, rb.velocity.y);
             }
             
         }
@@ -105,32 +107,19 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
             
-            if(Input.GetButton("Fire1")){
-                weaponController.Fire();
-            }    
-            if(Input.GetButtonDown("Fire2")){
-                weaponController.PowerShot();
-            } 
         }
 
     }
 
     private void UpdateGlitches(){
         canMove = gameController.canMove;
-        canShoot = gameController.canShoot;
         Debug.Log("eeeee");
     }
 
     private bool IsGrounded(){
         float offset = .01f;
         RaycastHit2D raycastHit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + offset, groundLayerMask);
-        Color rayColor;
-        if(raycastHit.collider != null){
-            rayColor = Color.green;
-        } else {
-            rayColor = Color.red;
-        }
-        Debug.DrawRay(capsuleCollider2D.bounds.center, Vector2.down * (capsuleCollider2D.bounds.extents.y + offset), rayColor);
+        
         return raycastHit.collider != null;
     }
 
