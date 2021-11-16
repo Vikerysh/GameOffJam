@@ -50,3 +50,14 @@ MonoBehaviour:
   pauseMenuActive: 0
   canMove: 1
   canShoot: 1
+  soundAudioClipArray:
+  - sound: 2
+    audioClip: {fileID: 8300000, guid: 14ab1e184af14c446bc84c3ec53a05d4, type: 3}
+  - sound: 0
+    audioClip: {fileID: 0}
+  - sound: 0
+    audioClip: {fileID: 0}
+  - sound: 0
+    audioClip: {fileID: 0}
+  - sound: 0
+    audioClip: {fileID: 0}

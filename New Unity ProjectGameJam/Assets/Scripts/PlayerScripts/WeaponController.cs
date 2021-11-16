@@ -73,6 +73,7 @@ public class WeaponController : MonoBehaviour
         Quaternion rotationOfHand = hand.rotation;
         if(fireRateCounter <= 0){
             Instantiate(projectile, barrel.transform.position, rotationOfHand);
+            SoundManager.PlaySound(SoundManager.Sound.PlayerShoot);
             fireRateCounter = fireRate;
         }
     }

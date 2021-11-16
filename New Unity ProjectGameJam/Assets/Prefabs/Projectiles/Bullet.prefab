@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60402bfe99e23c347ba19d732f874451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 8
+  lifetime: 4
   speed: 30
   damage: 1
   groundImpactSplash: {fileID: 7587673032604673573, guid: 98f2803064c3a6544b0e42c16c7a4c57, type: 3}

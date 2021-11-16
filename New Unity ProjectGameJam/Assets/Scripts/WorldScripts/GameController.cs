@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     
     void Awake(){
         instance = this;
+        SoundManager.Initialize();
     }
     #endregion
     public GameObject player;
@@ -42,4 +43,12 @@ public class GameController : MonoBehaviour
         canShoot = x;
         onGlitchChangeCallback.Invoke();
     }
+
+    public SoundAudioClip[] soundAudioClipArray;
+    [System.Serializable]
+    public class SoundAudioClip{
+        public SoundManager.Sound sound;
+        public AudioClip audioClip;
+    }
+
 }
