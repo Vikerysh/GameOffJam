@@ -12,8 +12,10 @@ public class HealthSystem : MonoBehaviour
     private float invincibilityDurationSeconds;
 
     bool isInvincible = false;
+    [SerializeField] private float gameOverReloadTime;
+    [SerializeField] private GameObject GameOverPanel;
 
-        public HealthSystem(int health)
+    public HealthSystem(int health)
     {
         this.health = health;
         health = maxHealth;        
@@ -72,7 +74,15 @@ public class HealthSystem : MonoBehaviour
     }
     
     public void ReloadScene()
-    { 
+    {
+        GameOverPanel.SetActive(true);
+        StartCoroutine(GameOverScreen());
+    }
+
+    private IEnumerator GameOverScreen()
+    {      
+        GameOverPanel.GetComponent<Animator>().Play("GameOver_Active");
+        yield return new WaitForSeconds(gameOverReloadTime);
         SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
         sceneLoader.ReloadScene();
     }
