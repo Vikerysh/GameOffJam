@@ -12,7 +12,10 @@ public static class SoundManager {
         EnemyMove,
         EnemyAttack,
         EnemyHit,
-        EnemyDie
+        EnemyDie,
+        ProjectileCharge,
+        ProjectileImpact,
+        ProjectileChargedImpact
 
     }
 

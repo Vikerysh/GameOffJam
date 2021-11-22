@@ -127,6 +127,7 @@ public class FlyingEnemy : MonoBehaviour
     }
     public void TakeDamage(int x){
         health -= x;
+        SoundManager.PlaySound(SoundManager.Sound.EnemyHit);
         if(health <= 0){
             Die();
         }
@@ -177,6 +178,7 @@ public class FlyingEnemy : MonoBehaviour
     }
     public virtual void Die(){
         LootDrop();
+        SoundManager.PlaySound(SoundManager.Sound.EnemyDie);
         Destroy(gameObject);
     }
 

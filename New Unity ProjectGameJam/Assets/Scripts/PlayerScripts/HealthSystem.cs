@@ -42,6 +42,7 @@ public class HealthSystem : MonoBehaviour
         else {
             //Set Invincibility Frames
             StartCoroutine(InvicibilityFrames());
+            SoundManager.PlaySound(SoundManager.Sound.PlayerHit);
         }
     }
 

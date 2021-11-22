@@ -30,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mousePosition;
     private WeaponController weaponController;
 
+    private float stepTimer = 0.2f;
     public bool canMove;
 
     // Start is called before the first frame update
@@ -54,6 +55,11 @@ public class PlayerMovement : MonoBehaviour
             // Rigidbody Movement should only be put in FixedUpdate   
             if(move.x != 0){
                 rb.velocity = new Vector2(move.x * speed * Time.deltaTime, rb.velocity.y);
+                stepTimer -= Time.deltaTime;
+                if(stepTimer <= 0){
+                    SoundManager.PlaySound(SoundManager.Sound.PlayerMove);
+                    stepTimer = 0.2f;
+                }
             }
             if(IsGrounded() && move.x == 0){
                 rb.velocity = new Vector2(0, rb.velocity.y);
@@ -131,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump(){
         Debug.Log("Jump");
         rb.AddForce(transform.up * jump);
+        SoundManager.PlaySound(SoundManager.Sound.PlayerJump);
     }
 
     private void GunFaceMouse(){
