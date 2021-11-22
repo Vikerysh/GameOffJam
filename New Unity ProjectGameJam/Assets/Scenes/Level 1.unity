@@ -5825,6 +5825,74 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 853806329}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[0].sound
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[1].sound
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[2].sound
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[3].sound
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[4].sound
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[5].sound
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[6].sound
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[7].sound
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[0].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 354866fe901489b44a31ed60f89b8a55, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[1].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ef75ec6863d46bc418d112f9da9b6357, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[2].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bbe4508f1eed64549bb19ec94986de21, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[3].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cd41f0b3985b982448f6b2e3074ab687, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[4].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e7d9ee681a5601469ca4c24c4292a18, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[5].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4d320bd1a6e52a1408656734f42f7123, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[6].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a6b22e91a75306441b20dcbf850f84ee, type: 3}
+    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
+      propertyPath: soundAudioClipArray.Array.data[7].audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f15d161971ffb0c4a86cf231b1c6dad4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
 --- !u!1 &1675428631
