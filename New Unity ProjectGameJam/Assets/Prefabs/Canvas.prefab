@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 044d8287a43fb5b4d92863c16dc3457b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSystem: {fileID: 6501566092831430182, guid: fdd2b0a327beabc43ab83f1d7d729823, type: 3}
+  healthSystem: {fileID: 0}
   HealthDisplay: {fileID: 2720198696301029709}
   Slider: {fileID: 2720198695247966427}
 --- !u!1 &2720198695825252181

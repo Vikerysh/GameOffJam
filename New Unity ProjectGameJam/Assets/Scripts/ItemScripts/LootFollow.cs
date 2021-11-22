@@ -17,22 +17,15 @@ public class LootFollow : MonoBehaviour
         rb.AddForce(direction * 0.1f);
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            if(canMove){
-                transform.position = Vector3.MoveTowards(transform.position, collision.transform.position, lootSpeed * Time.deltaTime);
-            }
-        }
-    }
-
     private void Update()
     {
         if(lootDelay <= 0){
             canMove = true;
         } else {
             lootDelay -= Time.deltaTime;
+        }
+        if(canMove){
+            transform.position = Vector3.MoveTowards(transform.position, GameController.instance.player.transform.position, lootSpeed * Time.deltaTime);
         }
         if(transform.childCount<1)
         { 
