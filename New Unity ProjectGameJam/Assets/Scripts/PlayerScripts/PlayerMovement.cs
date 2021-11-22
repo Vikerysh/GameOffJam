@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator charAnim;
 
     bool isFacingRight;
+    bool isMovingRight;
     private CapsuleCollider2D capsuleCollider2D;
 
     //CoyoteTime
@@ -93,7 +94,17 @@ public class PlayerMovement : MonoBehaviour
             
             //CHARACTER MOVE DETECTION FOR ANIMATION
             if(move.x != 0){
+                if(move.x > 0){
+                    isMovingRight = true;
+                } else {
+                    isMovingRight = false;
+                }
                 charAnim.SetBool("isMoving", true);
+                if(isFacingRight != isMovingRight){
+                    charAnim.SetBool("isReversing", true);
+                } else {
+                    charAnim.SetBool("isReversing", false);
+                }
             } else {
                 charAnim.SetBool("isMoving", false);
             }

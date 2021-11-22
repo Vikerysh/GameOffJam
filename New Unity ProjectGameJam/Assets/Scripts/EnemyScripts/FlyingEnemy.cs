@@ -132,6 +132,10 @@ public class FlyingEnemy : MonoBehaviour
             Die();
         }
         rb.velocity = Vector2.zero;
+        if(!aggro || !aggresive){
+            aggresive = true;
+            aggro = true;
+        }
         anim.SetTrigger("Hit");
     }
 
