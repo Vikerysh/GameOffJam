@@ -35,6 +35,7 @@ public class Projectile : MonoBehaviour
             } else if (other.gameObject.GetComponent<FlyingEnemy>() != null){
                 other.gameObject.GetComponent<FlyingEnemy>().TakeDamage(damage);
             }
+            Instantiate(groundImpactSplash, other.gameObject.transform.position, Quaternion.identity);
         } else {
             Instantiate(groundImpactSplash, transform.position, Quaternion.identity);
         }
