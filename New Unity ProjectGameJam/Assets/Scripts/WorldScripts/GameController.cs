@@ -45,9 +45,15 @@ public class GameController : MonoBehaviour
     }
 
     public SoundAudioClip[] soundAudioClipArray;
+    public SoundAudioTrack[] soundAudioTrackArray;
     [System.Serializable]
     public class SoundAudioClip{
         public SoundManager.Sound sound;
+        public AudioClip audioClip;
+    }
+    [System.Serializable]
+    public class SoundAudioTrack{
+        public SoundManager.Track track;
         public AudioClip audioClip;
     }
 

@@ -91,7 +91,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   speed: 400
-  jump: 500
+  jump: 550
   charSprite: {fileID: 3460726512199674307}
   gunSprite: {fileID: 3720169681120793492}
   charAnim: {fileID: 8583289265071995213}
@@ -138,6 +138,8 @@ MonoBehaviour:
   health: 10
   maxHealth: 10
   invincibilityDurationSeconds: 0.5
+  gameOverReloadTime: 0
+  GameOverPanel: {fileID: 0}
 --- !u!1 &1706484659561817310
 GameObject:
   m_ObjectHideFlags: 0

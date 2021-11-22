@@ -18,11 +18,20 @@ public static class SoundManager {
         ProjectileChargedImpact
 
     }
+    public enum Track {
+        AmbientOverworld,
+        EnergeticOverworld,
+        AmbientUnderworld,
+        EnergeticUnderworld
+
+    }
 
     private static Dictionary<Sound, float> soundTimerDictionary;
     private static GameObject oneShotGameObject;
     private static AudioSource oneShotAudioSource;
 
+    private static AudioSource audioSource;
+    private static GameObject musicGameObject;
     public static void Initialize(){
         soundTimerDictionary = new Dictionary<Sound, float>();
         soundTimerDictionary[Sound.PlayerMove] = 0;
@@ -30,6 +39,16 @@ public static class SoundManager {
 
     // Update is called once per frame
 
+    public static void PlayTrack(Track track){
+        if(musicGameObject == null){
+            musicGameObject = new GameObject("Music");
+            audioSource = musicGameObject.AddComponent<AudioSource>();
+            audioSource.loop = true;
+            audioSource.volume = 0.4f;
+        }
+        audioSource.clip = GetAudioTrack(track);
+        audioSource.Play();
+    }
     public static void PlaySound(Sound sound, Vector3 position){
         if(CanPlaySound(sound)){
             GameObject soundGameObject = new GameObject("Sound");
@@ -86,6 +105,16 @@ public static class SoundManager {
             }
         }
         Debug.LogError("Sound " + sound + " not found!");
+        return null;
+    }
+    private static AudioClip GetAudioTrack(Track track){
+        foreach (GameController.SoundAudioTrack soundAudioTrack in GameController.instance.soundAudioTrackArray)
+        {
+            if(soundAudioTrack.track == track){
+                return soundAudioTrack.audioClip;
+            }
+        }
+        Debug.LogError("Sound " + track + " not found!");
         return null;
     }
 }
