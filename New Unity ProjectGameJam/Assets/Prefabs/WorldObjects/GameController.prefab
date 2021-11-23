@@ -69,7 +69,7 @@ MonoBehaviour:
     audioClip: {fileID: 8300000, guid: f15d161971ffb0c4a86cf231b1c6dad4, type: 3}
   soundAudioTrackArray:
   - track: 0
-    audioClip: {fileID: 8300000, guid: af7fde36602c19048b194459f9c35d34, type: 3}
+    audioClip: {fileID: 8300000, guid: 070cabd90296cdc45a6d96aa24f8b4af, type: 3}
   - track: 1
     audioClip: {fileID: 8300000, guid: 09909c0f2a75ae5438c0ec3045ea02b1, type: 3}
   - track: 2

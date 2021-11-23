@@ -8,6 +8,9 @@ public class FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     public Vector3 target_Offset;
     private Vector3 velocity = Vector3.zero;
+
+    bool canFollow = true;
+
     private void Start()
     {
         //get player instance
@@ -17,9 +20,16 @@ public class FollowPlayer : MonoBehaviour
     }
     void Update()
     {
-        if (target)
-        {
-            transform.position = Vector3.SmoothDamp(transform.position, target.transform.position + target_Offset, ref velocity, 0.2f);
+        if(canFollow){
+            if (target)
+            {
+                transform.position = Vector3.SmoothDamp(transform.position, target.transform.position + target_Offset, ref velocity, 0.2f);
+            }
         }
     }
+
+    public void ToggleFollow(bool x){
+        canFollow = x;
+    }
+
 }

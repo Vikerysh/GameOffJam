@@ -6,6 +6,7 @@ public class WeaponController : MonoBehaviour
 {
     GameController gameController;
     private bool canShoot = true;
+    private bool canCharge = true;
     public bool charged;
 
     public GameObject projectile;
@@ -55,11 +56,13 @@ public class WeaponController : MonoBehaviour
             } 
 
             if(Input.GetButtonUp("Fire2")){
-                charging = false;
-                anim.SetBool("Charging", charging);
-                Destroy(chargeFX);
-                if(charged){
-                    PowerShot();
+                if(canCharge){
+                    charging = false;
+                    anim.SetBool("Charging", charging);
+                    Destroy(chargeFX);
+                    if(charged){
+                        PowerShot();
+                    }
                 }
             }
         }
@@ -67,6 +70,7 @@ public class WeaponController : MonoBehaviour
 
     private void UpdateGlitches(){
         canShoot = gameController.canShoot;
+        canCharge = gameController.canCharge;
         Debug.Log("eeeee");
     }
     public void Fire(){

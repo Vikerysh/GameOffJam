@@ -7,44 +7,26 @@ using TMPro;
 public class PromptTrigger : MonoBehaviour
 {
     [Header("Variables")]
-    bool playerisNear = false;
     bool textEnabled = false;
-    public GameObject prompt;
+    //public GameObject prompt;
 
 
     [Header("Text to Display")]
     [TextArea(3, 10)]
-    [SerializeField] string promptText = ("Use the Arrow keys to move");
-
-    [Header("References to Other Scripts")]
-    PlayerMovement player; // in case we wanna trigger something in the player as he walks by this prompt
-
-
+    [SerializeField] string promptText;
+    TMP_Text text;
 
     void Start()
     {
-
+        text = GameController.instance.popUpText;
     }
 
-    void Update()
-    {
-        if (playerisNear)
-        {
-           
-        }
-    }
 
     public void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player") 
         {
-            playerisNear = true;
-
-            if (!textEnabled)
-            {
-                TextPrompt popText = GameObject.FindGameObjectWithTag("PromptManager").GetComponent<TextPrompt>();
-                popText.PopUpText(promptText);
-            }
+            text.text = promptText;
         }
 
 
@@ -53,11 +35,8 @@ public class PromptTrigger : MonoBehaviour
     {
         if (other.tag == "Player") 
         {
-            TextPrompt popText = GameObject.FindGameObjectWithTag("PromptManager").GetComponent<TextPrompt>();
-            popText.ClosePopUpText();
-            playerisNear = false;
-
-            prompt.SetActive(false);
+            
+            text.text = " ";
 
         }
 

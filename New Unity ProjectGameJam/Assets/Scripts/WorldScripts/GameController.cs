@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public class GameController : MonoBehaviour
 {
     #region Singleton
@@ -14,6 +15,7 @@ public class GameController : MonoBehaviour
     #endregion
     public GameObject player;
     public Camera cam;
+    public TMP_Text popUpText;
 
     public bool isPaused;
     public bool pauseMenuActive;
@@ -21,7 +23,7 @@ public class GameController : MonoBehaviour
     public delegate void onGlitchChange();
     public onGlitchChange onGlitchChangeCallback;
 
-    public bool canMove, canShoot;
+    public bool canMove, canShoot, canCharge;
 
     public void PauseGame()
     {
