@@ -14,6 +14,7 @@ public class HealthSystem : MonoBehaviour
     bool isInvincible = false;
     [SerializeField] private float gameOverReloadTime;
     [SerializeField] private GameObject GameOverPanel;
+    [SerializeField] private Animator anim;
 
     public HealthSystem(int health)
     {
@@ -42,6 +43,7 @@ public class HealthSystem : MonoBehaviour
         else {
             //Set Invincibility Frames
             StartCoroutine(InvicibilityFrames());
+            anim.SetTrigger("Hit");
             SoundManager.PlaySound(SoundManager.Sound.PlayerHit);
         }
     }

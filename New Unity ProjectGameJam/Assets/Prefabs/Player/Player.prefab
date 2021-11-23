@@ -141,6 +141,7 @@ MonoBehaviour:
   invincibilityDurationSeconds: 0.5
   gameOverReloadTime: 3
   GameOverPanel: {fileID: 0}
+  anim: {fileID: 8583289265071995213}
 --- !u!114 &1174345055098080466
 MonoBehaviour:
   m_ObjectHideFlags: 0

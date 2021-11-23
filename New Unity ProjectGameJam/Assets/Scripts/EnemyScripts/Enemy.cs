@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
 
     private Vector2 playerDir;
     private bool moveRight = true;
+    private bool aggresive = false;//is player in range to be targeted?
     public SpriteRenderer enemySprite;
 
     public Animator anim;
@@ -30,13 +31,19 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(moveRight == false){
-            rb.AddForce(-transform.right * speed * Time.deltaTime);
-        } else if(moveRight == true){
-            rb.AddForce(transform.right * speed * Time.deltaTime);
-        }
-        if(rb.velocity.magnitude > maxSpeed){
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+        if(aggresive){
+            if(moveRight == false){
+                rb.AddForce(-transform.right * speed * Time.deltaTime);
+                anim.SetBool("isMoving", true);
+            } else if(moveRight == true){
+                rb.AddForce(transform.right * speed * Time.deltaTime);
+                anim.SetBool("isMoving", true);
+            }
+            if(rb.velocity.magnitude > maxSpeed){
+                rb.velocity = rb.velocity.normalized * maxSpeed;
+            }
+        } else {
+            anim.SetBool("isMoving", false);
         }
     }
     void Update()
@@ -63,10 +70,14 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int x){
         health -= x;
+        SoundManager.PlaySound(SoundManager.Sound.EnemyHit);
         if(health <= 0){
             Die();
         }
         rb.velocity = Vector2.zero;
+        if(!aggresive){
+            aggresive = true;
+        }
         anim.SetTrigger("Hit");
     }
 
@@ -78,6 +89,19 @@ public class Enemy : MonoBehaviour
 
     public virtual void EnemyBehaviour(){
 
+    }
+
+    
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.tag == "Player"){
+            aggresive = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other){
+        if(other.gameObject.tag == "Player"){
+            aggresive = false;
+        }
     }
     public virtual void Die(){
         //LootDrop();
