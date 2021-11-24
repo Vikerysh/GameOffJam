@@ -46,10 +46,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   cam: {fileID: 0}
+  popUpText: {fileID: 0}
   isPaused: 0
   pauseMenuActive: 0
   canMove: 1
   canShoot: 1
+  canCharge: 1
+  canJump: 1
   soundAudioClipArray:
   - sound: 0
     audioClip: {fileID: 8300000, guid: 354866fe901489b44a31ed60f89b8a55, type: 3}

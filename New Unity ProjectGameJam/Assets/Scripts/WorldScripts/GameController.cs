@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public delegate void onGlitchChange();
     public onGlitchChange onGlitchChangeCallback;
 
-    public bool canMove, canShoot, canCharge;
+    public bool canMove, canShoot, canCharge, canJump;
 
     public void PauseGame()
     {

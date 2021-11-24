@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float stepTimer = 0.2f;
     public bool canMove;
+    public bool canJump;
 
     // Start is called before the first frame update
     void Start()
@@ -84,14 +85,15 @@ public class PlayerMovement : MonoBehaviour
                 move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
             }
 
-            if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump") && canMove){
-                Jump();
+            if(canJump){
+                if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump") && canMove){
+                    Jump();
+                }
 
-            }
-
-            if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
-                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-                coyoteTimeCounter = 0f;
+                if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f){
+                    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                    coyoteTimeCounter = 0f;
+                }
             }
             
             //CHARACTER MOVE DETECTION FOR ANIMATION
@@ -128,14 +130,15 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
+        if(Input.GetKey(KeyCode.Escape)){
+            Application.Quit();
+        }
+
     }
 
     private void UpdateGlitches(){
         canMove = gameController.canMove;
-        if(!canMove){
-            rb.velocity = Vector2.zero;
-            move.x = 0;
-        }
+        canJump = gameController.canJump;
     }
 
     private bool IsGrounded(){

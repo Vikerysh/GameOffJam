@@ -10,7 +10,7 @@ public class GlitchEvent : MonoBehaviour
         if (other.tag == "Player") 
         {
             
-            GameController.instance.canMove = false;
+            GameController.instance.canJump = false;
             GameController.instance.canCharge = true;
             GameController.instance.onGlitchChangeCallback();
         }
