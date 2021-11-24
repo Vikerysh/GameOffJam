@@ -80,7 +80,9 @@ public class PlayerMovement : MonoBehaviour
                 coyoteTimeCounter -= Time.deltaTime;
             }
 
-            move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            if(canMove){
+                move = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            }
 
             if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump") && canMove){
                 Jump();
@@ -130,7 +132,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateGlitches(){
         canMove = gameController.canMove;
-        Debug.Log("eeeee");
+        if(!canMove){
+            rb.velocity = Vector2.zero;
+            move.x = 0;
+        }
     }
 
     private bool IsGrounded(){

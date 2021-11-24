@@ -1626,7 +1626,6 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Waterfall_Bridge_66: -2013378144
       Waterfall_Bridge_35: 1777280657
       Waterfall_Bridge_3: 1508273407
       Waterfall_Bridge_48: 1602331659
@@ -1689,6 +1688,7 @@ TextureImporter:
       Waterfall_Bridge_45: -856934031
       Waterfall_Bridge_63: 359729998
       Waterfall_Bridge_55: 538059271
+      Waterfall_Bridge_66: -2013378144
       Waterfall_Bridge_22: 1500509777
       Waterfall_Bridge_13: -62487720
       Waterfall_Bridge_39: 364305504

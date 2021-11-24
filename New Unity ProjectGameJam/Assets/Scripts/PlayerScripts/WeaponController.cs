@@ -47,7 +47,9 @@ public class WeaponController : MonoBehaviour
         if(canShoot){
             if(Input.GetButton("Fire1") && !charging){
                 Fire();
-            }    
+            }  
+        }  
+        if(canCharge){
             if(Input.GetButtonDown("Fire2")){
                 charging = true;
                 anim.SetBool("Charging", charging);
@@ -56,13 +58,11 @@ public class WeaponController : MonoBehaviour
             } 
 
             if(Input.GetButtonUp("Fire2")){
-                if(canCharge){
-                    charging = false;
-                    anim.SetBool("Charging", charging);
-                    Destroy(chargeFX);
-                    if(charged){
-                        PowerShot();
-                    }
+                charging = false;
+                anim.SetBool("Charging", charging);
+                Destroy(chargeFX);
+                if(charged){
+                    PowerShot();
                 }
             }
         }
@@ -71,7 +71,6 @@ public class WeaponController : MonoBehaviour
     private void UpdateGlitches(){
         canShoot = gameController.canShoot;
         canCharge = gameController.canCharge;
-        Debug.Log("eeeee");
     }
     public void Fire(){
         Quaternion rotationOfHand = hand.rotation;
