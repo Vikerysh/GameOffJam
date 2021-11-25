@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1706484658973991161}
   - component: {fileID: 6501566092831430182}
   - component: {fileID: 1174345055098080466}
+  - component: {fileID: 7119329203904571632}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -98,6 +99,7 @@ MonoBehaviour:
   charAnim: {fileID: 8583289265071995213}
   hand: {fileID: 1706484659561817310}
   canMove: 0
+  canJump: 0
 --- !u!114 &1706484658973991161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,6 +156,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030fe4c2650063947891775b57176501, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7119329203904571632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706484658973991166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 833e8da6a0737b7468259edae4e4347e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalToCollect: 10
+  glichActive: 0
 --- !u!1 &1706484659561817310
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class GlitchEvent : MonoBehaviour
             GameController.instance.canJump = false;
             GameController.instance.canCharge = true;
             GameController.instance.onGlitchChangeCallback();
+            other.gameObject.GetComponent<GlitchController>().StartGlitch();
         }
 
     }

@@ -139,6 +139,7 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateGlitches(){
         canMove = gameController.canMove;
         canJump = gameController.canJump;
+            Debug.Log("glitch");   
     }
 
     private bool IsGrounded(){

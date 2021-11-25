@@ -15,7 +15,8 @@ public static class SoundManager {
         EnemyDie,
         ProjectileCharge,
         ProjectileImpact,
-        ProjectileChargedImpact
+        ProjectileChargedImpact,
+        UpgradeGot
 
     }
     public enum Track {
