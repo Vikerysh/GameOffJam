@@ -77,8 +77,10 @@ public class PlayerMovement : MonoBehaviour
             
             if(IsGrounded()){
                 coyoteTimeCounter = coyoteTime;
+                charAnim.SetBool("isGrounded", true);
             } else {
                 coyoteTimeCounter -= Time.deltaTime;
+                charAnim.SetBool("isGrounded", false);
             }
 
             if(canMove){
@@ -145,7 +147,6 @@ public class PlayerMovement : MonoBehaviour
     private bool IsGrounded(){
         float offset = .01f;
         RaycastHit2D raycastHit = Physics2D.Raycast(capsuleCollider2D.bounds.center, Vector2.down, capsuleCollider2D.bounds.extents.y + offset, groundLayerMask);
-        
         return raycastHit.collider != null;
     }
 
@@ -156,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Jump(){
         Debug.Log("Jump");
+        charAnim.SetTrigger("Jump");
         rb.AddForce(transform.up * jump);
         SoundManager.PlaySound(SoundManager.Sound.PlayerJump);
     }

@@ -44,6 +44,7 @@ public class FlyingEnemy : MonoBehaviour
     void FixedUpdate()
     {
         if(aggresive){
+            anim.SetBool("Aggressive", true);
             if(aggro == true){
                 if(!striking){
                     if(sideDifference >= 2 || sideDifference <= -2){
@@ -70,6 +71,7 @@ public class FlyingEnemy : MonoBehaviour
                 }
             }  
         } else {
+            anim.SetBool("Aggressive", false);
             if(FloorDistance() < 5f){
                 rb.AddForce(transform.up * (speed * 2) * Time.deltaTime);
             }
@@ -131,7 +133,7 @@ public class FlyingEnemy : MonoBehaviour
         if(health <= 0){
             Die();
         }
-        rb.velocity = Vector2.zero;
+        //rb.velocity = rb.velocity/1.3f;
         if(!aggro || !aggresive){
             aggresive = true;
             aggro = true;
