@@ -228,7 +228,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -2270,10 +2270,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1426368982}
   cam: {fileID: 519420031}
+  popUpText: {fileID: 0}
   isPaused: 0
   pauseMenuActive: 0
   canMove: 1
   canShoot: 0
+  canCharge: 0
+  canJump: 0
   soundAudioClipArray: []
   soundAudioTrackArray: []
 --- !u!4 &1221296091
@@ -2827,3 +2830,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a99f4aa0133a2b42bd30bebe2f1f8df, type: 3}
+--- !u!1001 &8735454020812088690
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8735454019876010529, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_Name
+      value: Rain Generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 38.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.64878577
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735454019876010533, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8519ab27340a47046ad845bd57477d57, type: 3}
