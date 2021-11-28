@@ -14,6 +14,7 @@ public static class SoundManager {
         EnemyHit,
         EnemyDie,
         ProjectileCharge,
+        ProjectileChargeFire,
         ProjectileImpact,
         ProjectileChargedImpact,
         UpgradeGot

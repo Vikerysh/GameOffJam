@@ -52,6 +52,8 @@ public class WeaponController : MonoBehaviour
         if(canCharge){
             if(Input.GetButtonDown("Fire2")){
                 charging = true;
+                
+                SoundManager.PlaySound(SoundManager.Sound.ProjectileCharge);
                 anim.SetBool("Charging", charging);
                 chargeFX = Instantiate(chargeEffect, barrel.transform.position, Quaternion.identity);
                 chargeFX.GetComponent<TrackPosition>().x = barrel;

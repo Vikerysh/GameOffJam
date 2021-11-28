@@ -88,6 +88,7 @@ MonoBehaviour:
   speed: 30
   damage: 5
   groundImpactSplash: {fileID: 5037784832387924908, guid: 3f1246f74b55ce44998816570573499f, type: 3}
+  charged: 1
 --- !u!1 &6910607978580776401
 GameObject:
   m_ObjectHideFlags: 0
