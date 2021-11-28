@@ -86,7 +86,7 @@ public class HealthSystem : MonoBehaviour
     {      
         GameOverPanel.GetComponent<Animator>().SetBool("GameOverAnim", true);
         GameController.instance.cam.gameObject.GetComponent<FollowPlayer>().ToggleFollow(false);
-        yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
         SceneLoader sceneLoader = FindObjectOfType<SceneLoader>();
         sceneLoader.ReloadScene();
     }
