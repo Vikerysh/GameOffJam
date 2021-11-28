@@ -9,6 +9,8 @@ public class Projectile : MonoBehaviour
     public int damage;
     Rigidbody2D rb;
     public GameObject groundImpactSplash;
+    [SerializeField]
+    bool charged;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,6 +42,9 @@ public class Projectile : MonoBehaviour
             Instantiate(groundImpactSplash, other.gameObject.transform.position, Quaternion.identity);
         } else {
             Instantiate(groundImpactSplash, transform.position, Quaternion.identity);
+        }
+        if(charged){
+            SoundManager.PlaySound(SoundManager.Sound.ProjectileChargedImpact, transform.position);
         }
         Destroy(gameObject);
     }
