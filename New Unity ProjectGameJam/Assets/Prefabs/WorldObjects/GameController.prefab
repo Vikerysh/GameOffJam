@@ -51,7 +51,7 @@ MonoBehaviour:
   pauseMenuActive: 0
   canMove: 1
   canShoot: 1
-  canCharge: 1
+  canCharge: 0
   canJump: 1
   soundAudioClipArray:
   - sound: 0
