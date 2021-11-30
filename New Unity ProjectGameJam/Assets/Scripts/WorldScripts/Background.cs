@@ -5,6 +5,7 @@ using UnityEngine;
 public class Background : MonoBehaviour
 {
 
+    [SerializeField]
     GameObject cam;
     float length, startpos, startposY;
     public float parallaxEffect;
@@ -12,7 +13,9 @@ public class Background : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GameController.instance.cam.gameObject;
+        if(cam == null){
+            cam = GameController.instance.cam.gameObject;
+        }
         startpos = transform.position.x;
         startposY = transform.position.y;
         length = GetComponent<SpriteRenderer>().bounds.size.x;

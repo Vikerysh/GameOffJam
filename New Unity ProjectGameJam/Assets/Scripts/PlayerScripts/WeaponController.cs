@@ -34,6 +34,7 @@ public class WeaponController : MonoBehaviour
         gameController = GameController.instance;
         gameController.onGlitchChangeCallback += UpdateGlitches;
         fireRateCounter = fireRate;
+        UpdateGlitches();
     }
 
     // Update is called once per frame

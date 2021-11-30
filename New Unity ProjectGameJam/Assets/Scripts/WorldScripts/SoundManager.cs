@@ -24,7 +24,9 @@ public static class SoundManager {
         AmbientOverworld,
         EnergeticOverworld,
         AmbientUnderworld,
-        EnergeticUnderworld
+        EnergeticUnderworld,
+        PowerUpRoom,
+        PowerUpGet
 
     }
 
