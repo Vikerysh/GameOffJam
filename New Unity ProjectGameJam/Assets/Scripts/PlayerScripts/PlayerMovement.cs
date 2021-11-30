@@ -88,12 +88,12 @@ public class PlayerMovement : MonoBehaviour
             }
 
             if(canJump){
-                if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump") && canMove )
+                if(coyoteTimeCounter > 0 && Input.GetButtonDown("Jump") && canMove || Input.GetKeyDown("joystick button 2") && canMove && coyoteTimeCounter > 0 )
                 {
                     Jump();
                 }
 
-                if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f )
+                if(Input.GetButtonUp("Jump") && rb.velocity.y > 0f || Input.GetButtonUp("joystick button 2") && rb.velocity.y > 0f)
                 {
                     rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
                     coyoteTimeCounter = 0f;
