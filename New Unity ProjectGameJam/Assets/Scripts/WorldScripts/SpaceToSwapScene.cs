@@ -16,7 +16,7 @@ public class SpaceToSwapScene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if( Input.GetButtonDown("Jump")){
+        if(Input.GetKeyDown(KeyCode.Space)){
             SceneManager.LoadScene(levelToLoad);
         }
     }

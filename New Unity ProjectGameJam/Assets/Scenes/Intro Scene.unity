@@ -1421,7 +1421,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3254779903
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1857,7 +1857,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: You've been chosen. a bug on a quest to prove your worth to become the
-    next guardian of the forest, the powers if yours so long as you pass the forest's
+    next guardian of the forest, the powers are yours so long as you pass the forest's
     tests
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5a8c319a91d5524ebed19ea5b89d8fb, type: 2}
