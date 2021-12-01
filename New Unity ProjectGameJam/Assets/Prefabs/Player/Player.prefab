@@ -138,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c53d16147b0ff84eaff62dec9f234ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  maxHealth: 5
+  health: 10
+  maxHealth: 10
   invincibilityDurationSeconds: 0.5
   gameOverReloadTime: 2
   GameOverPanel: {fileID: 0}

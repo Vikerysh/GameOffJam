@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
     #region Singleton
@@ -57,6 +58,10 @@ public class GameController : MonoBehaviour
     public class SoundAudioTrack{
         public SoundManager.Track track;
         public AudioClip audioClip;
+    }
+
+    public void ReturnToMenu(){
+        SceneManager.LoadScene("Main Menu");
     }
 
 }
