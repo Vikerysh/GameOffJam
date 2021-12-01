@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 42309663, guid: 7c6a01d0a7a9b86408c6ef40791ac9fb, type: 3}
+  m_Sprite: {fileID: 877496134, guid: f4631053b7b163f42b6325cae2e765f5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 576299256724734246}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 55b7855916656bf49a3fb2b180ec0e86, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5e51c71c1bb5770449da4a4cfb16a435, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,8 +175,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.050941404, y: 0.095538035}
-  m_Size: {x: 1.5711585, y: 1.0743924}
+  m_Offset: {x: 0.26766032, y: 0.10847186}
+  m_Size: {x: 2.2083635, y: 1.0485271}
   m_Direction: 1
 --- !u!114 &7853539234237676905
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  damage: 1
+  damage: 3
   speed: 600
   maxSpeed: 4
   rb: {fileID: 0}
@@ -215,4 +215,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 7
+  m_Radius: 7.4354014
