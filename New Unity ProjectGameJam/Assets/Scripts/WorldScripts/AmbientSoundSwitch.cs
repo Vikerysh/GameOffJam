@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class AmbientSoundSwitch : MonoBehaviour
 {
+    public bool OpeningScene;
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.PlayTrack(SoundManager.Track.AmbientOverworld);
+        if(OpeningScene){
+            SoundManager.PlayTrack(SoundManager.Track.EnergeticOverworld);
+        }else {
+            SoundManager.PlayTrack(SoundManager.Track.AmbientOverworld);
+        }
     }
 
 }

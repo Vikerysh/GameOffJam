@@ -1168,6 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82c4c9fbd355383419d99d0160d44560, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OpeningScene: 1
 --- !u!1001 &1313572855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1389,7 +1390,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -285}
+  m_AnchoredPosition: {x: 0, y: -387}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1500118273
@@ -1439,8 +1440,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.9
-  m_fontSizeBase: 50.9
+  m_fontSize: 59.2
+  m_fontSizeBase: 59.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1833,7 +1834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972513994
@@ -1856,9 +1857,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You've been chosen. a bug on a quest to prove your worth to become the
-    next guardian of the forest, the powers are yours so long as you pass the forest's
-    tests
+  m_text: "For all of time, the great forest has known how to take care of itself.
+    From the insects crawling amongst the tree roots, to the birds soaring high above
+    the leaves.\r\n\nJust as key in the care & keeping of the great forest, were
+    the guardians. Each generation, the forest guardians chose a new guardian to
+    join their side. They chose the one whose heart was pure & courage was unquestioned.\r\n\r\nAnd
+    today, yet another guardian has been chosen. Though sick & ailing, the next-in-line
+    was soon to take the mantle. He had been chosen, and he would spend one final
+    evening with his family before donning the guardian\u2019s power.\r\n\r\nHis
+    son, however, had other thoughts\u2026"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5a8c319a91d5524ebed19ea5b89d8fb, type: 2}
   m_sharedMaterial: {fileID: 1218156887500800886, guid: c5a8c319a91d5524ebed19ea5b89d8fb, type: 2}
@@ -1885,8 +1892,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.97
-  m_fontSizeBase: 67.97
+  m_fontSize: 42.57
+  m_fontSizeBase: 42.57
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
