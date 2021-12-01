@@ -6948,11 +6948,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1706484658973991165, guid: fdd2b0a327beabc43ab83f1d7d729823, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.55
+      value: -23.45
       objectReference: {fileID: 0}
     - target: {fileID: 1706484658973991165, guid: fdd2b0a327beabc43ab83f1d7d729823, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.02
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 1706484658973991165, guid: fdd2b0a327beabc43ab83f1d7d729823, type: 3}
       propertyPath: m_LocalPosition.z
@@ -28383,7 +28383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2780875246576462426, guid: 144dffd507f49ef47bafd3dfbc77ff61, type: 3}
       propertyPath: promptText
-      value: Press Space to jump
+      value: Press W to jump
       objectReference: {fileID: 0}
     - target: {fileID: 2780875246576462427, guid: 144dffd507f49ef47bafd3dfbc77ff61, type: 3}
       propertyPath: m_RootOrder
@@ -32314,7 +32314,7 @@ Tilemap:
       - {fileID: -2003633505, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 646121749, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 1993075081, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 76, y: 0, z: 0}
@@ -32686,7 +32686,7 @@ Tilemap:
       - {fileID: 1129560424, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 461364525, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 1730692796, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 94, y: 1, z: 0}
@@ -33130,7 +33130,7 @@ Tilemap:
       - {fileID: -2084543981, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 1242547001, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 684093663, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 95, y: 3, z: 0}
@@ -33688,7 +33688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2780875246576462426, guid: 144dffd507f49ef47bafd3dfbc77ff61, type: 3}
       propertyPath: promptText
-      value: Hold Space to jump higher
+      value: Hold W to jump higher
       objectReference: {fileID: 0}
     - target: {fileID: 2780875246576462427, guid: 144dffd507f49ef47bafd3dfbc77ff61, type: 3}
       propertyPath: m_RootOrder
@@ -35585,7 +35585,7 @@ Tilemap:
       - {fileID: 2058096907, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
       - {fileID: 847338056, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
       - {fileID: 2045962804, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 82, y: -8, z: 0}
@@ -35621,7 +35621,7 @@ Tilemap:
       - {fileID: 2058096907, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
       - {fileID: 847338056, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
       - {fileID: 2045962804, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 75, y: -7, z: 0}
