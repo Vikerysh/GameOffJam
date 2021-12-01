@@ -141,7 +141,7 @@ MonoBehaviour:
   health: 5
   maxHealth: 5
   invincibilityDurationSeconds: 0.5
-  gameOverReloadTime: 3
+  gameOverReloadTime: 2
   GameOverPanel: {fileID: 0}
   anim: {fileID: 8583289265071995213}
 --- !u!114 &1174345055098080466
