@@ -18,8 +18,8 @@ public class GlitchEvent : MonoBehaviour
             GameController.instance.canCharge = true;
             GameController.instance.onGlitchChangeCallback();
             other.gameObject.GetComponent<GlitchController>().StartGlitch();
+            StartCoroutine(PowerUpCollected());
         }
-        StartCoroutine(PowerUpCollected());
     }
 
     IEnumerator PowerUpCollected(){
