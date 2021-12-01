@@ -14,12 +14,14 @@ public class GlitchEvent : MonoBehaviour
         if (other.tag == "Player") 
         {
             
+            GameController.instance.player.GetComponent<HealthSystem>().Heal(10);
+            GameController.instance.player.GetComponent<HealthSystem>().Damage(9);
             GameController.instance.canJump = false;
             GameController.instance.canCharge = true;
             GameController.instance.onGlitchChangeCallback();
             other.gameObject.GetComponent<GlitchController>().StartGlitch();
+            StartCoroutine(PowerUpCollected());
         }
-        StartCoroutine(PowerUpCollected());
     }
 
     IEnumerator PowerUpCollected(){

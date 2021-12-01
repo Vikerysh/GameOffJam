@@ -44,7 +44,7 @@ public class Projectile : MonoBehaviour
             Instantiate(groundImpactSplash, transform.position, Quaternion.identity);
         }
         if(charged){
-            SoundManager.PlaySound(SoundManager.Sound.ProjectileChargedImpact, transform.position);
+            SoundManager.PlaySound(SoundManager.Sound.ProjectileChargedImpact);
         }
         Destroy(gameObject);
     }

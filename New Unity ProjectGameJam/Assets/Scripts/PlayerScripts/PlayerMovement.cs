@@ -135,7 +135,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         if(Input.GetKey(KeyCode.Escape)){
-            Application.Quit();
+            GameController.instance.ReturnToMenu();
         }
 
     }
@@ -143,7 +143,10 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateGlitches(){
         canMove = gameController.canMove;
         canJump = gameController.canJump;
-            Debug.Log("glitch");   
+        if(!canMove){
+            move.x = 0;
+            charAnim.SetBool("isMoving", false);
+        }
     }
 
     private bool IsGrounded(){

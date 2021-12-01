@@ -2047,41 +2047,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1102338770}
     - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
       propertyPath: popUpText
       value: 
       objectReference: {fileID: 2028082777}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.size
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.data[8].sound
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.data[9].sound
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.data[10].sound
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.data[8].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: 3223f9f5076a3524b939a7ae57c58fe8, type: 3}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.data[9].audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 414485090582993547, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
-      propertyPath: soundAudioClipArray.Array.data[10].audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: b7b73af032624994caf81dfd76589df0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f42634c69123ea948acc5ef4d9983c73, type: 3}
 --- !u!1 &1358128543
