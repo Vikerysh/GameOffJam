@@ -203,7 +203,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5a8c319a91d5524ebed19ea5b89d8fb, type: 2}
-  m_sharedMaterial: {fileID: 5789659317907096977, guid: af9d5c857cbe11649a1ecc11a7e57906, type: 2}
+  m_sharedMaterial: {fileID: 1218156887500800886, guid: c5a8c319a91d5524ebed19ea5b89d8fb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -778,7 +778,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1802048264}
         m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
-        m_MethodName: ActivatePauseScreen
+        m_MethodName: DeactivatePauseScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
