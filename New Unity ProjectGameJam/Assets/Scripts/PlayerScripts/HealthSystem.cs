@@ -37,6 +37,8 @@ public class HealthSystem : MonoBehaviour
         
         if(health<=0)
         {
+            GameController.instance.canMove = false;
+            GameController.instance.onGlitchChangeCallback;
             KillPlayer();
         } 
         
