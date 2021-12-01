@@ -6,7 +6,7 @@ public class Shredder : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy" || collision.tag == "Projectile")
+        if (collision.tag == "Projectile")
         {
             collision.gameObject.SetActive(false);
         }
@@ -19,6 +19,14 @@ public class Shredder : MonoBehaviour
 
             healthSystem.KillPlayer();
 
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.SetActive(false);
         }
     }
 }
