@@ -42,9 +42,10 @@ public class GlitchController : MonoBehaviour
     }
 
     IEnumerator CompleteEvent(){
-        text.text = "Glitches Corrected, Jump restored!";
-        SoundManager.PlaySound(SoundManager.Sound.UpgradeGot);
-        yield return new WaitForSeconds(3f);
+        text.text = "Overload restored, J.U.M.P restored!";
+        SoundManager.PlayTrack(SoundManager.Track.PowerUpGet);
+        yield return new WaitForSeconds(5f);
+        SoundManager.PlayTrack(SoundManager.Track.AmbientUnderworld);
         text.text = "";
     }
 

@@ -85,7 +85,7 @@ public class WeaponController : MonoBehaviour
     }
     public void PowerShot(){
         Quaternion rotationOfHand = hand.rotation;
-        RaycastHit2D hit = Physics2D.CircleCast(barrel.transform.position, 0.2f, barrel.transform.right, .1f, impactMask);
+        RaycastHit2D hit = Physics2D.CircleCast(barrel.transform.position, 0.2f, barrel.transform.right, .2f, impactMask);
         if(hit){
             Instantiate(groundPowerSplash, hit.point, Quaternion.identity);
             playerMovement.BlowBack(hit.point, blowbackPower);
