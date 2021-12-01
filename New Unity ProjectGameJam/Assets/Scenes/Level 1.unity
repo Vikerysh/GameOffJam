@@ -5352,6 +5352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1342196502, guid: 1c8a16305f62e8644b7d369f4ca8f48c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1675227630, guid: 1c8a16305f62e8644b7d369f4ca8f48c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -32358,7 +32362,7 @@ Tilemap:
       - {fileID: 93829686, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: -1812725967, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 620499631, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 82, y: 0, z: 0}
@@ -33126,7 +33130,7 @@ Tilemap:
       - {fileID: -2084543981, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 1242547001, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
       - {fileID: 684093663, guid: 1ebbd2187833f3c4496ed0b95e1aa721, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 95, y: 3, z: 0}
@@ -35617,7 +35621,7 @@ Tilemap:
       - {fileID: 2058096907, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
       - {fileID: 847338056, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
       - {fileID: 2045962804, guid: b9ae25d5b1ad93347b92009ef05227b5, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 75, y: -7, z: 0}

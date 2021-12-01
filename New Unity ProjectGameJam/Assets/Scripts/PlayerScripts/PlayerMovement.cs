@@ -134,10 +134,6 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if(Input.GetKey(KeyCode.Escape)){
-            GameController.instance.ReturnToMenu();
-        }
-
     }
 
     private void UpdateGlitches(){
